@@ -135,7 +135,7 @@ export default function BadgesScreen() {
     (earned || []).map((b: any) => [b.badgeId as string, b.earnedAt as string])
   );
   const statsMap = new Map<string, StatsItem>(
-    (statsData?.stats ?? []).map(s => [s.badgeId, s])
+    (statsData?.stats ?? []).map((s: StatsItem) => [s.badgeId, s])
   );
 
   const getProgress = (trophy: TrophyDef): { current: number; total: number } | null => {
